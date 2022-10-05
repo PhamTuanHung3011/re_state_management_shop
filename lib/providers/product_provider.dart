@@ -38,18 +38,6 @@ class ProductProvider with ChangeNotifier {
     ),
   ];
 
-  bool _showIsFavorite = false;
-
-  void showFavorites() {
-    _showIsFavorite = true;
-    notifyListeners();
-  }
-
-  void showAll() {
-    _showIsFavorite = false;
-    notifyListeners();
-  }
-
   List<Product> get items {
     return [..._items];
   }

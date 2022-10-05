@@ -4,6 +4,7 @@ import 'package:re_state_management_shiop/providers/product_provider.dart';
 import 'package:re_state_management_shiop/widgets/product_gird.dart';
 import 'package:provider/provider.dart';
 import '../providers/product.dart';
+import '../widgets/app_drawer.dart';
 import '../widgets/badge.dart';
 import '../widgets/product_items.dart';
 import 'cart_screen.dart';
@@ -14,6 +15,8 @@ enum showFavorites {
 }
 
 class ProductOverviewScreen extends StatefulWidget {
+  static const routeName = '/';
+
   @override
   State<ProductOverviewScreen> createState() => _ProductOverviewScreenState();
 }
@@ -27,6 +30,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
       appBar: AppBar(
         title: Text('My Shop'),
         actions: <Widget>[
+
           PopupMenuButton(
               onSelected: (showFavorites value) {
                 setState(() {
@@ -37,15 +41,15 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
                   }
                 });
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.more_horiz_sharp,
               ),
               itemBuilder: (_) => [
-                    PopupMenuItem(
+                    const PopupMenuItem(
                       value: showFavorites.Favorites,
                       child: Text('Favorite Only'),
                     ),
-                    PopupMenuItem(
+                    const PopupMenuItem(
                       value: showFavorites.All,
                       child: Text('All Products'),
                     ),
@@ -65,6 +69,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
           )
         ],
       ),
+        drawer:  AppDrawer(),
       body: ProductGird(_showFavoriteOnly),
     );
   }
