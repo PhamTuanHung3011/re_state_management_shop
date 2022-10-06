@@ -42,7 +42,7 @@ class ProductItem extends StatelessWidget {
                   backgroundColor: Colors.green,
                   content: Text(
                 'Add to cart',
-                textAlign: TextAlign.center,
+
               ),),);
             },
             icon: Icon(Icons.shopping_cart),
