@@ -29,7 +29,7 @@ class _OrderItemState extends State<OrderItem> {
               },
               icon: Icon(_expanded ? Icons.expand_less : Icons.expand_more),
             ),
-            title: Text('${order.amount}', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+            title: Text('\$${order.amount}', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
             subtitle: Text(DateFormat('dd MM yyyy').format(order.dateTime)),
           ),
           if (_expanded)

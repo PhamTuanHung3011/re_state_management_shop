@@ -54,4 +54,16 @@ class ProductProvider with ChangeNotifier {
   List<Product> get ListFavorites {
     return _items.where((pro) => pro.isFavorite).toList();
   }
+
+  void deleteProduct(String id) {
+    _items.removeWhere((pro) => pro.id == id);
+    notifyListeners();
+  }
+  void editProduct(String id, String title, String description,double price ) {
+    var product = findById(id);
+    product.title = title;
+    product.description = description;
+    product.price = price;
+    notifyListeners();
+  }
 }

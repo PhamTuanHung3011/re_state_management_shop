@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:re_state_management_shiop/providers/cart.dart';
 import 'package:re_state_management_shiop/providers/order_provider.dart';
+import 'package:re_state_management_shiop/screens/UserProductScreen.dart';
 import 'package:re_state_management_shiop/screens/cart_screen.dart';
+import 'package:re_state_management_shiop/screens/edit_product_screen.dart';
 import 'package:re_state_management_shiop/screens/order_screen.dart';
+import 'package:re_state_management_shiop/widgets/user_product.dart';
 import 'providers/product_provider.dart';
 import 'screens/product_detail_screens.dart';
 import 'screens/product_overview_screen.dart';
@@ -42,6 +45,8 @@ class MyApp extends StatelessWidget {
           ProductDetailScreens.routerName: (context) => ProductDetailScreens(),
           CartScreen.routeName: (context) => CartScreen(),
           OrderScreen.routeName: (context) => OrderScreen(),
+          UserProductScreen.routeName: (context) => UserProductScreen(),
+          EditProductScreen.routename: (context) => EditProductScreen(),
         },
       ),
     );
